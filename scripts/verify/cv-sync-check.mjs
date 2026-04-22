@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * cv-sync-check.mjs — Validates that the career-ops setup is consistent.
+ * cv-sync-check.mjs — Validates that the Job-Logger setup is consistent.
  *
  * Checks:
  * 1. cv.md exists
@@ -34,7 +34,7 @@ if (!existsSync(cvPath)) {
 // 2. Check profile.yml exists
 const profilePath = join(projectRoot, 'config', 'profile.yml');
 if (!existsSync(profilePath)) {
-  errors.push('config/profile.yml not found. Run `python scripts/setup.py` or copy from config/profile.example.yml and fill in your details.');
+  errors.push('config/profile.yml not found. Run `python setup.py` or copy from config/profile.example.yml and fill in your details.');
 } else {
   const profileContent = readFileSync(profilePath, 'utf-8');
   const requiredFields = ['full_name', 'email', 'location'];
@@ -82,7 +82,7 @@ if (existsSync(digestPath)) {
 }
 
 // Output results
-console.log('\n=== career-ops sync check ===\n');
+console.log('\n=== Job-Logger sync check ===\n');
 
 if (errors.length === 0 && warnings.length === 0) {
   console.log('All checks passed.');

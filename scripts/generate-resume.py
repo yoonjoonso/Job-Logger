@@ -550,7 +550,7 @@ def profile_path():
     for candidate in PROFILE_CANDIDATES:
         if candidate.exists():
             return candidate
-    fail("Missing config/profile.yml — run python scripts/setup.py to create it")
+    fail("Missing config/profile.yml — run python setup.py to create it")
 
 
 def dedupe_rows(rows, key_fn):

@@ -10,6 +10,7 @@ Paste in a job post, track where you applied, and generate tailored materials wh
 - `📌 Application tracking`: keep status, company, role, notes, and follow-up details together
 - `📄 Tailored resumes`: generate resumes matched to a specific role
 - `✉️ Application materials`: draft cover letters and outreach emails without starting from scratch every time
+- `🗣️ Interview answers`: keep reusable answers to common questions and tailor them for a specific role
 - `🎯 Repeatable workflow`: keep a consistent process for reviewing, scoring, and updating opportunities
 - `🤖 Optional AI help`: use AI when you want it, skip it when you do not
 
@@ -18,7 +19,7 @@ Paste in a job post, track where you applied, and generate tailored materials wh
 ### 1. Run setup
 
 ```bash
-python scripts/setup.py
+python setup.py
 ```
 
 This walks you through the first-time setup and prepares the project for your own job search.
@@ -62,6 +63,14 @@ python log_job.py --id 42 --set-archetype backend
 python log_job.py --id 42 --email
 ```
 
+### Work on interview answers
+
+```bash
+python answers.py --list
+python answers.py --question why-this-role --id 42 --ai codex
+python answers.py --all
+```
+
 ## What You Get
 
 Generated files are written to `output/`.
@@ -72,6 +81,7 @@ That usually includes things like:
 - a tailored resume
 - a cover letter
 - an outreach email
+- saved interview answers
 
 ## Notes
 

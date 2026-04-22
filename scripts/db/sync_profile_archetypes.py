@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from policy_config import display_label, extract_profile_archetypes, normalize_key
+from scripts.config_utils import display_label, extract_profile_archetypes, normalize_key
 
 PROFILE_PATH = ROOT / "config" / "profile.yml"
 SIGNAL_RULES_PATH = ROOT / "config" / "resume-signal-rules.yml"

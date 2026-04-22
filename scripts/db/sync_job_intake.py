@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from policy_config import load_yaml_like, normalize_key, normalize_search_text
+from scripts.config_utils import load_yaml_like, normalize_key, normalize_search_text
 
 RULES_PATH = ROOT / "config" / "job-intake-rules.yml"
 DB_PATH = ROOT / "data" / "job-log.db"

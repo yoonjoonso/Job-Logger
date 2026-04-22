@@ -303,13 +303,19 @@ def load_dynamic_archetype_catalog(repo_root: Path, db_path: Path | None = None)
                     for row in connection.execute("SELECT name FROM sqlite_master WHERE type = 'table'").fetchall()
                 }
                 if "archetype_resume_configs" in tables:
-                    for row in connection.execute("SELECT archetype_key, label FROM archetype_resume_configs WHERE approved = 1 ORDER BY archetype_key").fetchall():
+                    for row in connection.execute(
+                        "SELECT archetype_key, label FROM archetype_resume_configs WHERE approved = 1 ORDER BY archetype_key"
+                    ).fetchall():
                         remember(row["archetype_key"], row["label"])
                 if "resume_profiles" in tables:
-                    for row in connection.execute("SELECT profile_key FROM resume_profiles WHERE approved = 1 ORDER BY profile_key").fetchall():
+                    for row in connection.execute(
+                        "SELECT profile_key FROM resume_profiles WHERE approved = 1 ORDER BY profile_key"
+                    ).fetchall():
                         remember(row["profile_key"])
                 if "job_archetype_rules" in tables:
-                    for row in connection.execute("SELECT DISTINCT archetype_key FROM job_archetype_rules WHERE approved = 1 ORDER BY archetype_key").fetchall():
+                    for row in connection.execute(
+                        "SELECT DISTINCT archetype_key FROM job_archetype_rules WHERE approved = 1 ORDER BY archetype_key"
+                    ).fetchall():
                         remember(row["archetype_key"])
         except sqlite3.Error:
             pass

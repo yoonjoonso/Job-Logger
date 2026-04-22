@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Job intake, resume generation, and application tracking pipeline",
   "scripts": {
-    "setup": "python scripts/setup.py",
+    "setup": "python setup.py",
     "normalize": "node scripts/tracker/normalize-statuses.mjs",
     "dedup": "node scripts/tracker/dedup-tracker.mjs",
     "merge": "node scripts/tracker/merge-tracker.mjs",

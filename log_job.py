@@ -18,7 +18,7 @@ from functools import lru_cache
 from html import unescape
 from pathlib import Path
 
-from policy_config import load_dynamic_archetype_catalog, normalize_search_text
+from scripts.config_utils import load_dynamic_archetype_catalog, normalize_search_text
 
 # Ensure UTF-8 I/O on Windows (cp1252 default can't encode many Unicode chars in job postings)
 if sys.platform == "win32":

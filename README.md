@@ -1,20 +1,41 @@
-# Career-Ops
+# Job-Logger
 
-Career-Ops is a local-first job application workflow for technical candidates.
+`Job-Logger` is a local-first workflow for job intake, application tracking, and tailored application materials.
 
-It helps you:
+It keeps the core path deterministic, stores state locally, and lets AI stay optional instead of becoming a hard dependency.
 
-- ingest and score job descriptions
-- track applications in a structured way
-- generate tailored resumes
-- draft cover letters and outreach emails
-- keep the workflow deterministic when AI is unavailable
+## Quick Start
 
-The repo is designed so the core setup can work without an agent. Claude/Codex-style agent workflows are optional and additive.
+### 1. Run setup
+
+```bash
+python scripts/setup.py
+```
+
+Setup will:
+
+- create starter config files when they are missing
+- capture your candidate/profile basics
+- create or copy the local SQLite database
+- apply DB migrations
+- sync profile, intake, and resume-policy data into the DB
+- optionally install Node dependencies
+
+### 2. Verify the install
+
+```bash
+npm run sync-check
+```
+
+### 3. Explore the CLI
+
+```bash
+python log_job.py --help
+```
 
 ## What It Does
 
-Career-Ops combines a few layers that are usually scattered across notes, trackers, and one-off prompts:
+`Job-Logger` combines a few layers that are usually scattered across notes, trackers, spreadsheets, and one-off prompts:
 
 - `job intake`: parse a posting from a URL, pasted text, file, or minimal manual entry
 - `classification`: map roles into your local archetypes using DB-backed intake rules
@@ -29,38 +50,6 @@ You can use the app in three broad ways:
 - `deterministic`: use `--ai none` and rely on local config plus DB-backed policy
 - `AI-assisted`: use `--ai claude` or `--ai codex` where available
 - `hybrid`: keep setup and storage deterministic, but use AI only for selective intake or drafting tasks
-
-## Quick Start
-
-### 1. Run the guided setup
-
-```bash
-npm run setup
-```
-
-This sets up the repo for a new user by:
-
-- copying tracked starter templates if they do not already exist
-- prompting for basic candidate/profile information
-- creating local runtime config such as `config/profile.yml`, `config/resume-signal-rules.yml`, and `config/job-intake-rules.yml` when missing
-- optionally copying resume examples into `user-input/resume-examples/`
-- optionally installing Node dependencies
-- optionally copying `data/job-log.template.db` to `data/job-log.db`
-- applying DB migrations after template copy
-- syncing the user-selected local archetypes into the local DB after bootstrap
-- syncing local intake and resume-policy rules into the local DB
-
-### 2. Verify the setup
-
-```bash
-npm run sync-check
-```
-
-### 3. Explore the CLI
-
-```bash
-python log_job.py --help
-```
 
 ## Common Commands
 
@@ -100,7 +89,7 @@ python log_job.py --rescore-all
 ## Setup and Bootstrap Commands
 
 ```bash
-npm run setup
+python scripts/setup.py
 npm run db:setup
 npm run db:sync-profile
 npm run db:sync-intake
@@ -113,7 +102,7 @@ npm run query
 
 What they do:
 
-- `npm run setup`: guided first-run setup
+- `python scripts/setup.py`: guided first-run setup
 - `npm run db:setup`: copy the tracked template DB if missing, then apply migrations
 - `npm run db:sync-profile`: sync local profile archetypes and local resume signal rules into the local DB without overwriting existing rows
 - `npm run db:sync-intake`: sync local job intake rules into the local DB without overwriting existing rows
@@ -149,7 +138,7 @@ Typical artifacts include:
 - `<candidate>-coverletter.pdf`
 - `<candidate>-email.txt`
 
-Actual filenames still reflect some legacy assumptions in parts of the codebase and will be cleaned up further as the repo is generalized.
+Some filenames still reflect older internal naming and will be cleaned up further as the repo is generalized.
 
 ## Privacy and Public Repo Hygiene
 
@@ -162,7 +151,7 @@ Read [`docs/public-private-boundaries.md`](docs/public-private-boundaries.md) be
 
 ## Current Status
 
-The repo is in transition from a personal workflow to a public-safe general-use tool.
+The repo is still being cleaned up from a personal workflow into a public-safe general-use tool.
 
 What is already in place:
 

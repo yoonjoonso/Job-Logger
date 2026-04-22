@@ -1,0 +1,8 @@
+Hi,
+
+I'm a software engineer with 7+ years in game development, primarily in Unity. I've worked on live multiplayer games with millions of players, building gameplay systems and backend services.
+
+I've attached my resume.
+
+Thanks,
+[Your Name]

@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "generator": "scripts/generate-resume.py",
+  "notes": [
+    "Automated fixtures target resume-metadata.json behavior produced by scripts/generate-resume.py.",
+    "Archetype ranking is an upstream log_job.py concern and is documented in docs/resume-regression-matrix.md rather than asserted here.",
+    "A positive certification-order case is not yet available from the current role_requirements data; current automated coverage checks certification visibility only."
+  ],
+  "cases": [
+    {
+      "id": "online_direct",
+      "mode": "automated",
+      "description": "Strong game-server/backend fit with direct role-requirement coverage.",
+      "args": {
+        "archetype": "gameserver",
+        "keywords": ["game server", "backend", "redis", "sql"],
+        "job_company": "Ubisoft",
+        "job_role": "Online Programmer",
+        "job_location": "Montreal, Canada",
+        "job_work_model": "onsite"
+      }
+    },
+    {
+      "id": "gameplay_direct",
+      "mode": "automated",
+      "description": "Direct gameplay fit with no cert or supplemental education elevation.",
+      "args": {
+        "archetype": "gameplay",
+        "keywords": ["gameplay", "unity", "multiplayer"],
+        "job_company": "Ubisoft",
+        "job_role": "Senior Gameplay Programmer (New IP)",
+        "job_location": "Montreal Canada hybrid",
+        "job_work_model": "hybrid"
+      }
+    },
+    {
+      "id": "cyber_adjacent_ea",
+      "mode": "automated",
+      "description": "Security-adjacent software role expected to keep cyber framing but still suppress certs.",
+      "args": {
+        "archetype": "cyber",
+        "keywords": ["security", "network", "backend", "forensics"],
+        "job_company": "EA",
+        "job_role": "Security Software Engineer II (212910)",
+        "job_location": "Austin TX / Orlando FL hybrid",
+        "job_work_model": "hybrid"
+      }
+    },
+    {
+      "id": "cyber_low_match_general",
+      "mode": "automated",
+      "description": "Low-match cyber/security role expected to fall back to general summary while still surfacing supplemental education relevance.",
+      "args": {
+        "archetype": "cyber",
+        "keywords": ["cyber", "security", "network"],
+        "job_company": "Trace3",
+        "job_role": "Cyber Security Engineer II",
+        "job_location": "Colorado Springs CO on-site",
+        "job_work_model": "onsite",
+        "job_compensation": "$65K-$75K"
+      }
+    },
+    {
+      "id": "cert_order_manual",
+      "mode": "manual",
+      "description": "Placeholder manual case for positive certification ordering once role_requirements includes matched cert-specific requirements.",
+      "args": {
+        "archetype": "cyber"
+      }
+    }
+  ]
+}

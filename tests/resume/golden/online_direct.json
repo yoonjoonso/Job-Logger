@@ -1,0 +1,10 @@
+{
+  "archetype": "gameserver",
+  "selected_profile_key": "backend",
+  "fit_tier": "direct_fit",
+  "final_layout": "grouped_standard",
+  "cert_count": 0,
+  "cerritos_included": false,
+  "experience_explainability_present": true,
+  "drop_explainability_present": true
+}

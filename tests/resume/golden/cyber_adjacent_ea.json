@@ -1,0 +1,10 @@
+{
+  "archetype": "cyber",
+  "selected_profile_key": "cyber",
+  "fit_tier": "direct_fit",
+  "final_layout": "grouped_standard",
+  "cert_count": 0,
+  "cerritos_included": true,
+  "experience_explainability_present": true,
+  "drop_explainability_present": true
+}

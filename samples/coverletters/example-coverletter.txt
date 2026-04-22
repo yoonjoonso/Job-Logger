@@ -1,0 +1,11 @@
+Dear [Company Name] Hiring Team,
+
+I'm applying for the [Role Title] role. I have 7+ years shipping games in Unity across PC, console, and VR, including a live-service title with millions of players where I owned gameplay systems end-to-end.
+
+At [Studio Name], I built [specific system] using [tech stack], which [specific outcome]. I also [second proof point tied to JD requirement], which required [relevant skill or constraint].
+
+[Gap acknowledgment if applicable, one sentence: e.g. "My cloud background is Azure-native; GCP is something I pick up quickly."]
+
+Thank you for your time and consideration.
+
+[Your Name]

@@ -1,0 +1,27 @@
+# Job Intake Archetype Rules
+# Copy to config/job-intake-rules.yml and customize.
+# These rules drive deterministic intake classification for your local archetypes.
+#
+# Each archetype entry gets a key (must match your profile.yml archetypes) and
+# a list of weighted keywords that signal that role direction in a job description.
+#
+# candidate_keywords: terms extracted and tracked from JDs for your skill gap analysis.
+# stopwords: terms to ignore during keyword extraction.
+
+archetypes:
+  - key: general
+    keywords:
+      - keyword: software engineer
+        weight: 4
+      - keyword: developer
+        weight: 3
+
+candidate_keywords:
+  - software engineer
+  - developer
+
+stopwords:
+  - term: and
+    kind: stopword
+  - term: the
+    kind: stopword

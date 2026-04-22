@@ -1,0 +1,62 @@
+node_modules/
+__pycache__/
+*.pyc
+output/*
+!output/.gitkeep
+data/temp/
+.env
+*.log
+user-input/
+temp/
+
+# Personal/local runtime state
+config/profile.yml
+config/resume-signal-rules.yml
+config/job-intake-rules.yml
+data/cv.md
+data/cv-summary.md
+data/applications.md
+data/evaluated.md
+data/skill-gap-cache.md
+data/pipeline.md
+data/job-log.db
+data/job-log.db-shm
+data/job-log.db-wal
+data/career-ops.db
+data/career-ops.db-shm
+data/career-ops.db-wal
+
+# Local-only scripts (one-off migrations, recovery tools, personal seeds)
+scripts/local/
+
+# Agent-local state and handoff scratchpads
+.claude/settings.local.json
+.shared/for-claude.md
+.shared/for-codex.md
+.codex/notes/
+.codex/pydeps/
+
+# Candidate-specific or generated Codex workflow state
+.codex/backend-template.zip
+.codex/backend-template/
+.codex/resume-workflow/data/builds/*
+!.codex/resume-workflow/data/builds/.gitkeep
+.codex/resume-workflow/data/candidate/*
+!.codex/resume-workflow/data/candidate/.gitkeep
+.codex/resume-workflow/data/jobs/*
+!.codex/resume-workflow/data/jobs/.gitkeep
+
+# Resume templates (contain personal data; gitignored until sanitized for public release)
+config/resume-templates/*.docx
+
+# User content drop-zones (personal artifacts excluded; generic examples tracked)
+samples/resumes/*
+!samples/resumes/.gitkeep
+samples/coverletters/*
+!samples/coverletters/.gitkeep
+!samples/coverletters/example-*.txt
+samples/emails/*
+!samples/emails/.gitkeep
+!samples/emails/example-*.txt
+user-input/resume-examples/*
+!user-input/resume-examples/.gitkeep

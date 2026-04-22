@@ -1,0 +1,34 @@
+# Career-Ops Profile Configuration
+# Copy to config/profile.yml and replace the example values.
+
+candidate:
+  full_name: "Jane Smith"
+  display_name: "Jane"
+  email: "jane@example.com"
+  phone: ""
+  location: "Remote, United States"
+  linkedin: ""
+  github: ""
+  clearance_eligible: false
+
+target_roles:
+  primary:
+    - "general"
+
+  archetypes:
+    - name: "general"
+      level: "Mid"
+      fit: "primary"
+      interest: 8
+      notes: "Replace with your actual target archetypes. Add one entry per direction (e.g. backend, frontend, devops). 'general' is a safe fallback."
+
+narrative:
+  headline: "Software Engineer"
+  exit_story: >
+    Add your current transition summary here.
+  superpowers:
+    - "Add a concise strength here"
+    - "Add another concise strength here"
+  proof_points:
+    - name: "Replace with a key project"
+      hero_metric: "Replace with the outcome or metric"

@@ -1,0 +1,25 @@
+{
+  "name": "job-log",
+  "version": "1.0.0",
+  "description": "Job intake, resume generation, and application tracking pipeline",
+  "scripts": {
+    "setup": "python scripts/setup.py",
+    "normalize": "node scripts/tracker/normalize-statuses.mjs",
+    "dedup": "node scripts/tracker/dedup-tracker.mjs",
+    "merge": "node scripts/tracker/merge-tracker.mjs",
+    "pdf": "node scripts/generate-pdf.mjs",
+    "sync-check": "node scripts/verify/cv-sync-check.mjs",
+    "db:setup": "node scripts/db/db-init.mjs setup",
+    "db:sync-profile": "python scripts/db/sync_profile_archetypes.py",
+    "db:sync-intake": "python scripts/db/sync_job_intake.py",
+    "db:sync-resume-policy": "python scripts/db/sync_resume_policy.py",
+    "db:init": "node scripts/db/db-init.mjs",
+    "db:roles": "node scripts/db/db-init.mjs roles",
+    "db:signals": "node scripts/db/db-init.mjs signals",
+    "query": "node scripts/db/query.mjs"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.8.0",
+    "playwright": "^1.58.1"
+  }
+}
